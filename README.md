@@ -1,22 +1,17 @@
- Retail Store Guideliness Assessment
+
+Retail Store Guideliness Assessment
 
 A computer vision system for automatically classifying retail store environments as "compliant" (well-organized) or "non-compliant" (cluttered) using deep learning and providing visual explanations.
-
  Project Overview
-
 This project uses transfer learning with MobileNetV2 to analyze retail store images and determine their compliance with organization standards. The system not only classifies images but also provides visual explanations using Gradient-weighted Class Activation Mapping (Grad-CAM) to highlight areas of concern or compliance.
-
  Features
+Automated Classification: Binary classification of retail spaces as compliant or non-compliant
+Visual Explanations: Heat map generation to highlight areas influencing the decision
+Transfer Learning: MobileNetV2 architecture with pre-trained weights for efficient training
+Data Augmentation: Rotation, zoom, shift, and flip transformations to improve model generalization
+Extensible Architecture: Modular design for easy enhancement and modification
 
-- **Automated Classification**: Binary classification of retail spaces as compliant or non-compliant
-- **Visual Explanations**: Heat map generation to highlight areas influencing the decision
-- **Transfer Learning**: MobileNetV2 architecture with pre-trained weights for efficient training
-- **Data Augmentation**: Rotation, zoom, shift, and flip transformations to improve model generalization
-- **Extensible Architecture**: Modular design for easy enhancement and modification
-
- Directory Structure
-
-```
+Directory Structure
 retail-compliance/
 ├── data.py                # Image downloading script
 ├── organize.py            # Dataset organization 
@@ -42,7 +37,6 @@ retail-compliance/
 ```
 
  Requirements
-
  Hardware Requirements
 - Multi-core processor (Intel Core i5/AMD Ryzen 5 or better)
 - 8GB RAM (16GB recommended)
@@ -59,47 +53,31 @@ retail-compliance/
  Installation
 
 1. Clone this repository:
-   ```
    git clone https://github.com/yourusername/retail-compliance.git
    cd retail-compliance
-   ```
 
 2. Create a virtual environment (recommended):
-   ```
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
 
 3. Install dependencies:
-   ```
    pip install tensorflow opencv-python numpy matplotlib simple_image_download pillow
-   ```
 
-  Usage
-
+ Usage
  Data Collection
 
 To download images for training:
-
-```
 python data.py
-```
-
 This will download images of organized and cluttered retail stores using simple_image_download.
 
  Dataset Organization
-
 To organize downloaded images into the correct dataset structure:
-
-```
 python organize.py
-```
 This creates a structured dataset with separate folders for compliant and non-compliant images.
 
  Model Training
 
 To train the classification model: python train.py
-
 This will:
 1. Create data generators with augmentation
 2. Build and compile the MobileNetV2 model with custom classification head
@@ -110,17 +88,11 @@ This will:
  Making Predictions
 
 To analyze a new retail store image:
-
-```
 python predict.py
-```
-
 Note: By default, the script looks for an image at the hardcoded path in predict.py. You'll need to modify this path to point to your test image:
-
-```python
+python
 # In predict.py
 img_path = r'path/to/your/test/image.jpg'
-```
 
  Output
 
@@ -179,9 +151,9 @@ early_stop = EarlyStopping(
 )
 ```
 
-]Troubleshooting
+Troubleshooting
 
-### Common Issues
+Common Issues
 
 1. "Model file not found" error:
    - Make sure you've run `train.py` before `predict.py`
@@ -209,4 +181,4 @@ early_stop = EarlyStopping(
 Acknowledgments
 
 - The MobileNetV2 architecture and pre-trained weights from TensorFlow/Keras
-- Grad-CAM implementation inspired by [Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization](https://arxiv.org/abs/1610.02391)
+- Grad-CAM implementation inspired by [Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization](
