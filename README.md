@@ -212,13 +212,6 @@ early_stop = EarlyStopping(
 - Web service or mobile application development
 - Video analysis capabilities
 
-## Contributors
-
-[Your Name]
-
-## License
-
-[Specify your license here]
 
 ## Acknowledgments
 
